@@ -1,0 +1,27 @@
+﻿<DanFormulas><List>
+	
+	<Dan Name="Dan_CWGod">
+		<Normal>1</Normal>
+		<ItemName>Item_Dan_CWGod</ItemName>
+		<Level>5</Level>
+		<SuccessRate>1</SuccessRate>
+		<Count>5</Count>
+	</Dan>
+		
+	<Dan Name="Dan_FSGod">
+		<Normal>1</Normal>
+		<ItemName>Item_Dan_FSGod</ItemName>
+		<Level>5</Level>
+		<SuccessRate>1</SuccessRate>
+		<Count>5</Count>
+	</Dan>
+		
+	<Dan Name="Dan_YQGod">
+		<Normal>1</Normal>
+		<ItemName>Item_Dan_YQGod</ItemName>
+		<Level>5</Level>
+		<SuccessRate>1</SuccessRate>
+		<Count>5</Count>
+	</Dan>
+		
+</List></DanFormulas>

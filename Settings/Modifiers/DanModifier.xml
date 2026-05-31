@@ -1,0 +1,60 @@
+﻿<ModifierDefs><List>
+
+	<Modifier Name="Dan_CWGod" Type="Normal">
+		<DisplayName>大道至简丹</DisplayName>
+		<Desc>形而上者谓之道，从大道之中自然衍化而成的丹药，蕴含大道本身的一切微妙，服用后可以获得巨额参悟值</Desc>
+		<MaxStack>1</MaxStack>
+		<Duration>180</Duration>
+		<Display>1</Display>
+		<Item Lable="Dan">
+			<NotRandom>1</NotRandom>
+			<PhysicalLables>
+				<li>Smooth1</li>
+				<li>Hard1</li>
+				<li>Light1</li>
+			</PhysicalLables>
+			<Elixir>
+				<TreeExp>30000000</TreeExp>
+			</Elixir>
+		</Item>
+	</Modifier> 
+	
+	<Modifier Name="Dan_FSGod" Type="Normal">
+		<DisplayName>尘心浩劫丹</DisplayName>
+		<Desc>从天劫本源中提炼出来的丹药，蕴含八八六十四次天劫的分神之力，服用后可以一次性获得六十四条分神</Desc>
+		<MaxStack>1</MaxStack>
+		<Duration>180</Duration>
+		<Display>1</Display>
+		<Item Lable="Dan">
+			<NotRandom>1</NotRandom>
+			<PhysicalLables>
+				<li>Smooth1</li>
+				<li>Hard1</li>
+				<li>Light1</li>
+			</PhysicalLables>
+			<Elixir>
+				<TreeExp>30000000</TreeExp>
+			</Elixir>
+		</Item>
+	</Modifier> 
+	
+	<Modifier Name="Dan_YQGod" Type="Normal">
+		<DisplayName>极御炼神丹</DisplayName>
+		<Desc>形而下者谓之器，凝结了最深层御器感悟的丹药，食用后可以凝炼神魂，额外驾驭一件法宝！可以多次服用</Desc>
+		<MaxStack>1</MaxStack>
+		<Duration>180</Duration>
+		<Display>1</Display>
+		<Item Lable="Dan">
+			<NotRandom>1</NotRandom>
+			<PhysicalLables>
+				<li>Smooth1</li>
+				<li>Hard1</li>
+				<li>Light1</li>
+			</PhysicalLables>
+			<Elixir>
+				<TreeExp>30000000</TreeExp>
+			</Elixir>
+		</Item>
+	</Modifier> 
+	
+</List></ModifierDefs>

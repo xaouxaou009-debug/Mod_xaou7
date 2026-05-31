@@ -1,0 +1,325 @@
+<ThingDefs><List>
+	<ThingDef Type="Item" Name="Item_PriestFrockDown" Parent="TrousersBase">
+	<ThingName>太一道袍</ThingName>
+	<TexPath>res/Sprs/object/object_mianku01</TexPath>
+	<MaxStack>1</MaxStack>
+	<Desc>内门弟子专用服装(下身)，具有一些奇妙的能力（增加基础心情五点，少量加快历练速度）。</Desc>
+	<Item Lable="Trousers">
+		
+		<BeMade>
+			<WorkToMake>400</WorkToMake>
+			<Quality>0</Quality>
+			<ArtDesc></ArtDesc>
+			<StuffCategories>
+				<Stuff name = "Leather"/>
+				<Stuff name = "Cloth"/>
+			</StuffCategories>
+			<CostStuffCount>100</CostStuffCount>
+			<CostItems>
+					<Item name = "Item_LingStone" count = "1"/>
+					<Item name = "Item_ZhenTu" count = "1"/>
+			</CostItems>
+		</BeMade>
+
+		<Equip>
+			<ModelID>3</ModelID>
+			<ArmorLingShield>0</ArmorLingShield>
+
+			<Modifier>PriestFrockDown</Modifier>
+			
+			<TemperatureMaxAdd>50</TemperatureMaxAdd>
+			<TemperatureMinAdd>-30</TemperatureMinAdd>
+			
+			<PropertyScaleFromStuff>1</PropertyScaleFromStuff>
+		</Equip> 
+	</Item>
+	</ThingDef>
+
+	<ThingDef Type="Item" Name="Item_DanDown" Parent="TrousersBase">
+	<ThingName>丹师道袍</ThingName>
+	<TexPath>res/Sprs/object/object_mianku01</TexPath>
+	<MaxStack>1</MaxStack>
+	<Desc>炼丹师专用服装(下身)，具有提高丹药产量的符阵加持。</Desc>
+	<Item Lable="Trousers">
+		
+		<BeMade>
+			<WorkToMake>400</WorkToMake>
+			<Quality>0</Quality>
+			<ArtDesc></ArtDesc>
+			<StuffCategories>
+				<Stuff name = "Leather"/>
+				<Stuff name = "Cloth"/>
+			</StuffCategories>
+			<CostStuffCount>1000</CostStuffCount>
+			<CostItems>
+					<Item name = "Item_LingStone" count = "1"/>
+					<Item name = "Item_ZhenTu" count = "1"/>
+			</CostItems>
+		</BeMade>
+
+		<Equip>
+			<ModelID>3</ModelID>
+			<ArmorLingShield>0</ArmorLingShield>
+
+			<Modifier>DanDown</Modifier>
+			
+			<TemperatureMaxAdd>50</TemperatureMaxAdd>
+			<TemperatureMinAdd>-30</TemperatureMinAdd>
+			
+			<PropertyScaleFromStuff>1</PropertyScaleFromStuff>
+		</Equip> 
+	</Item>
+	</ThingDef>
+
+	<ThingDef Type="Item" Name="Item_QiDown" Parent="TrousersBase">
+	<ThingName>炼器师道袍</ThingName>
+	<TexPath>res/Sprs/object/object_mianku01</TexPath>
+	<MaxStack>1</MaxStack>
+	<Desc>炼器师专用服装(下身)，具有提高炼制法宝品阶的符阵加持。</Desc>
+	<Item Lable="Trousers">
+		
+		<BeMade>
+			<WorkToMake>400</WorkToMake>
+			<Quality>0</Quality>
+			<ArtDesc></ArtDesc>
+			<StuffCategories>
+				<Stuff name = "Leather"/>
+				<Stuff name = "Cloth"/>
+			</StuffCategories>
+			<CostStuffCount>1000</CostStuffCount>
+			<CostItems>
+					<Item name = "Item_LingStone" count = "1"/>
+					<Item name = "Item_ZhenTu" count = "1"/>
+			</CostItems>
+		</BeMade>
+
+		<Equip>
+			<ModelID>3</ModelID>
+			<ArmorLingShield>0</ArmorLingShield>
+
+			<Modifier>QiDown</Modifier>
+			
+			<TemperatureMaxAdd>50</TemperatureMaxAdd>
+			<TemperatureMinAdd>-30</TemperatureMinAdd>
+			
+			<PropertyScaleFromStuff>1</PropertyScaleFromStuff>
+		</Equip> 
+	</Item>
+	</ThingDef>
+
+	<ThingDef Type="Item" Name="Item_XiuXingDown" Parent="TrousersBase">
+	<ThingName>修行道袍</ThingName>
+	<TexPath>res/Sprs/object/object_mianku01</TexPath>
+	<MaxStack>1</MaxStack>
+	<Desc>修行时穿的道袍(下身)，具有降低心境波动的符阵加持。</Desc>
+	<Item Lable="Trousers">
+		
+		<BeMade>
+			<WorkToMake>400</WorkToMake>
+			<Quality>0</Quality>
+			<ArtDesc></ArtDesc>
+			<StuffCategories>
+				<Stuff name = "Leather"/>
+				<Stuff name = "Cloth"/>
+			</StuffCategories>
+			<CostStuffCount>1000</CostStuffCount>
+			<CostItems>
+					<Item name = "Item_LingStone" count = "1"/>
+					<Item name = "Item_ZhenTu" count = "1"/>
+			</CostItems>
+		</BeMade>
+
+		<Equip>
+			<ModelID>3</ModelID>
+			<ArmorLingShield>0</ArmorLingShield>
+
+			<Modifier>XiuXingDown</Modifier>
+			
+			<TemperatureMaxAdd>50</TemperatureMaxAdd>
+			<TemperatureMinAdd>-30</TemperatureMinAdd>
+			
+			<PropertyScaleFromStuff>1</PropertyScaleFromStuff>
+		</Equip> 
+	</Item>
+	</ThingDef>
+
+	<ThingDef Type="Item" Name="Item_WaKuangDown" Parent="TrousersBase">
+	<ThingName>矿工制服</ThingName>
+	<TexPath>res/Sprs/object/object_mianku01</TexPath>
+	<MaxStack>1</MaxStack>
+	<Desc>矿工制服（下），负责挖矿的外门大爷穿的制服，能中幅度提升金石等级。</Desc>
+	<Item Lable="Trousers">
+		
+		<BeMade>
+			<WorkToMake>400</WorkToMake>
+			<Quality>0</Quality>
+			<ArtDesc></ArtDesc>
+			<StuffCategories>
+				<Stuff name = "Leather"/>
+				<Stuff name = "Cloth"/>
+			</StuffCategories>
+			<CostStuffCount>100</CostStuffCount>
+			<CostItems>
+					<Item name = "Item_LingStone" count = "1"/>
+					<Item name = "Item_ZhenTu" count = "1"/>
+			</CostItems>
+		</BeMade>
+
+		<Equip>
+			<ModelID>3</ModelID>
+			<ArmorLingShield>0</ArmorLingShield>
+
+			<Modifier>WaKuang</Modifier>
+			
+			<TemperatureMaxAdd>50</TemperatureMaxAdd>
+			<TemperatureMinAdd>-30</TemperatureMinAdd>
+			
+			<PropertyScaleFromStuff>1</PropertyScaleFromStuff>
+		</Equip> 
+	</Item>
+	</ThingDef>
+
+	<ThingDef Type="Item" Name="Item_YuanDingDown" Parent="TrousersBase">
+	<ThingName>园丁制服</ThingName>
+	<TexPath>res/Sprs/object/object_mianku01</TexPath>
+	<MaxStack>1</MaxStack>
+	<Desc>园丁制服（下），负责种地的外门大爷穿的制服，能中幅度提升种地等级。</Desc>
+	<Item Lable="Trousers">
+		
+		<BeMade>
+			<WorkToMake>400</WorkToMake>
+			<Quality>0</Quality>
+			<ArtDesc></ArtDesc>
+			<StuffCategories>
+				<Stuff name = "Leather"/>
+				<Stuff name = "Cloth"/>
+			</StuffCategories>
+			<CostStuffCount>100</CostStuffCount>
+			<CostItems>
+					<Item name = "Item_LingStone" count = "1"/>
+					<Item name = "Item_ZhenTu" count = "1"/>
+			</CostItems>
+		</BeMade>
+
+		<Equip>
+			<ModelID>3</ModelID>
+			<ArmorLingShield>0</ArmorLingShield>
+
+			<Modifier>YuanDing</Modifier>
+			
+			<TemperatureMaxAdd>50</TemperatureMaxAdd>
+			<TemperatureMinAdd>-30</TemperatureMinAdd>
+			
+			<PropertyScaleFromStuff>1</PropertyScaleFromStuff>
+		</Equip> 
+	</Item>
+	</ThingDef>
+
+	<ThingDef Type="Item" Name="Item_JiangShiDown" Parent="TrousersBase">
+	<ThingName>匠师制服</ThingName>
+	<TexPath>res/Sprs/object/object_mianku01</TexPath>
+	<MaxStack>1</MaxStack>
+	<Desc>匠师制服（下），负责工匠类工作的外门大爷穿的制服，能中幅度提升巧匠等级。</Desc>
+	<Item Lable="Trousers">
+		
+		<BeMade>
+			<WorkToMake>400</WorkToMake>
+			<Quality>0</Quality>
+			<ArtDesc></ArtDesc>
+			<StuffCategories>
+				<Stuff name = "Leather"/>
+				<Stuff name = "Cloth"/>
+			</StuffCategories>
+			<CostStuffCount>100</CostStuffCount>
+			<CostItems>
+					<Item name = "Item_LingStone" count = "1"/>
+					<Item name = "Item_ZhenTu" count = "1"/>
+			</CostItems>
+		</BeMade>
+
+		<Equip>
+			<ModelID>3</ModelID>
+			<ArmorLingShield>0</ArmorLingShield>
+
+			<Modifier>JiangShi</Modifier>
+			
+			<TemperatureMaxAdd>50</TemperatureMaxAdd>
+			<TemperatureMinAdd>-30</TemperatureMinAdd>
+			
+			<PropertyScaleFromStuff>1</PropertyScaleFromStuff>
+		</Equip> 
+	</Item>
+	</ThingDef>
+
+	<ThingDef Type="Item" Name="Item_ZhuGongDown" Parent="TrousersBase">
+	<ThingName>筑工制服</ThingName>
+	<TexPath>res/Sprs/object/object_mianku01</TexPath>
+	<MaxStack>1</MaxStack>
+	<Desc>筑工制服（下），负责筑工的外门大爷穿的制服，能中幅度提升版筑技能等级。</Desc>
+	<Item Lable="Trousers">
+		
+		<BeMade>
+			<WorkToMake>400</WorkToMake>
+			<Quality>0</Quality>
+			<ArtDesc></ArtDesc>
+			<StuffCategories>
+				<Stuff name = "Leather"/>
+				<Stuff name = "Cloth"/>
+			</StuffCategories>
+			<CostStuffCount>100</CostStuffCount>
+			<CostItems>
+					<Item name = "Item_LingStone" count = "1"/>
+					<Item name = "Item_ZhenTu" count = "1"/>
+			</CostItems>
+		</BeMade>
+
+		<Equip>
+			<ModelID>3</ModelID>
+			<ArmorLingShield>0</ArmorLingShield>
+
+			<Modifier>ZhuGong</Modifier>
+			
+			<TemperatureMaxAdd>50</TemperatureMaxAdd>
+			<TemperatureMinAdd>-30</TemperatureMinAdd>
+			
+			<PropertyScaleFromStuff>1</PropertyScaleFromStuff>
+		</Equip> 
+	</Item>
+	</ThingDef>
+
+	<ThingDef Type="Item" Name="Item_WaiJiaoDown" Parent="TrousersBase">
+	<ThingName>外交官制服</ThingName>
+	<TexPath>res/Sprs/object/object_mianku01</TexPath>
+	<MaxStack>1</MaxStack>
+	<Desc>外交官制服（下），负责外交官工作的外门大爷穿的制服，能中幅度提升处事和雅艺技能等级。</Desc>
+	<Item Lable="Trousers">
+		
+		<BeMade>
+			<WorkToMake>400</WorkToMake>
+			<Quality>0</Quality>
+			<ArtDesc></ArtDesc>
+			<StuffCategories>
+				<Stuff name = "Leather"/>
+				<Stuff name = "Cloth"/>
+			</StuffCategories>
+			<CostStuffCount>100</CostStuffCount>
+			<CostItems>
+					<Item name = "Item_LingStone" count = "1"/>
+					<Item name = "Item_ZhenTu" count = "1"/>
+			</CostItems>
+		</BeMade>
+
+		<Equip>
+			<ModelID>3</ModelID>
+			<ArmorLingShield>0</ArmorLingShield>
+
+			<Modifier>WaiJiao</Modifier>
+			
+			<TemperatureMaxAdd>50</TemperatureMaxAdd>
+			<TemperatureMinAdd>-30</TemperatureMinAdd>
+			
+			<PropertyScaleFromStuff>1</PropertyScaleFromStuff>
+		</Equip> 
+	</Item>
+	</ThingDef>
+</List></ThingDefs>

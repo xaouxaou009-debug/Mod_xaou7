@@ -1,0 +1,41 @@
+<ThingDefs><List>
+	<ThingDef Type="Item" Name="Item_ZhenTu" Parent="MaterialBase">	
+		<ThingName>阵图</ThingName>
+		<TexPath>res\Sprs\object\object_yuepu01</TexPath>	
+		<Desc>一张阵图图谱，记录了一个阵法的构建方法。</Desc>
+		<MaxStack>100</MaxStack>
+		<Beauty>10</Beauty>
+		<Rate>6</Rate>
+		<ElementKind>Mu</ElementKind>
+		<Flammability>
+			<Flammability>0.6</Flammability>
+			<FlameSpawnThingDef></FlameSpawnThingDef>
+			<FlameSpawnChance>0</FlameSpawnChance>
+			<BurningPoint>120</BurningPoint>
+		</Flammability>
+		<Item Lable="Other">	
+			<FabaoSuffix>图,卷</FabaoSuffix>
+			<PhysicalLables>
+				<li>Light1</li>
+				<li>Soft1</li>
+			</PhysicalLables>	
+			<BeMade>
+				<WorkToMake>400</WorkToMake>
+				<CostItems>
+						<Item name = "Item_SpellPaper" count = "1"/>
+						<Item name = "Item_LingStone" count = "5"/>
+				</CostItems>
+			</BeMade>		
+		</Item>
+		<Ling>
+			<AddionLing>0</AddionLing>
+			<AddionRadius>1</AddionRadius>
+			<AddionFailing>0</AddionFailing>
+			<AddionFailRadius>0</AddionFailRadius>
+			
+			<Attenuation>0.05</Attenuation>
+			<Absorption>0.6</Absorption>
+			<Accommodate>40</Accommodate>
+		</Ling>
+	</ThingDef>
+</List></ThingDefs>
