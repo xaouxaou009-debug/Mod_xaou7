@@ -11,8 +11,8 @@
 			<Quality>0</Quality>
 			<ArtDesc></ArtDesc>
 			<StuffCategories>
-				<Stuff name = "Leather"/>
-				<Stuff name = "Cloth"/>
+				<Stuff name = "LingStone"/>
+				<Stuff name = "LingStone"/>
 			</StuffCategories>
 			<CostStuffCount>1</CostStuffCount>
 			<CostItems>
@@ -38,21 +38,16 @@
 	<ThingName>อาภรณ์นักปรุงโอสถ</ThingName>
 	<TexPath>res/Sprs/object/object_mianyi01</TexPath>
 	<MaxStack>1</MaxStack>
-	<Desc>炼丹师专用服装(上身)，上面具有提高成功率的符阵加持效果。</Desc>
+	<Desc>อาภรณ์สำหรับนักหลอมโอสถ (ส่วนบน) ได้รับการเสริมพลังด้วยค่ายกลยันต์ ช่วยเพิ่มอัตราความสำเร็จในการหลอมโอสถ</Desc>
 	<Item Lable="Clothes">
 		
 		<BeMade>
 			<WorkToMake>400</WorkToMake>
 			<Quality>0</Quality>
 			<ArtDesc></ArtDesc>
-			<StuffCategories>
-				<Stuff name = "Leather"/>
-				<Stuff name = "Cloth"/>
-			</StuffCategories>
-			<CostStuffCount>1000</CostStuffCount>
+			
 			<CostItems>
 					<Item name = "Item_LingStone" count = "1"/>
-					<Item name = "Item_ZhenTu" count = "1"/>
 			</CostItems>
 		</BeMade>
 
@@ -62,8 +57,8 @@
 
 			<Modifier>DanUp</Modifier>
 			
-			<TemperatureMaxAdd>50</TemperatureMaxAdd>
-			<TemperatureMinAdd>-30</TemperatureMinAdd>
+			<TemperatureMaxAdd>500</TemperatureMaxAdd>
+			<TemperatureMinAdd>-300</TemperatureMinAdd>
 			
 			<PropertyScaleFromStuff>1</PropertyScaleFromStuff>
 		</Equip> 

@@ -1,6 +1,6 @@
 ﻿<ThingDefs><List>
 <ThingDef Type="Building" Name="ChaoFanPlace"  Parent="ProductionBase">	
-	<ThingName>ร้านขายของ</ThingName>
+	<ThingName>ร้านทุกอย่าง2บาท</ThingName>
 	<Desc>แม่ค้าสุดสวย ที่แอบหลอมรวมพลังเหนือโลกีย์เอาไว้ สามารถสร้างสรรค์วัตถุวิเศษระดับฝืนลิขิตฟ้าได้หลากหลายชนิด!</Desc>
 	<TexPath>Spr\asst_1.png</TexPath>
 	<TexScale>1</TexScale>
@@ -89,6 +89,11 @@
 			<Produce>
 				<ThingDef>Item_PriestFrockUp</ThingDef>
 				<Display>ชุดคลุมสำนักไท่อี (ท่อนบน)</Display>
+				<Count>1</Count>
+			</Produce>
+			<Produce>
+			    <ThingDef>Item_DanUp</ThingDef>
+				<Display>อาภรณ์นักปรุงโอสถ</Display>
 				<Count>1</Count>
 			</Produce>
 			<Produce>
