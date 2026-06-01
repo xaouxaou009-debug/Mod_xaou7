@@ -35,7 +35,7 @@
 	</ThingDef>
 
 	<ThingDef Type="Item" Name="Item_DanUp" Parent="ClothesBase">
-	<ThingName>丹师道袍</ThingName>
+	<ThingName>อาภรณ์นักปรุงโอสถ</ThingName>
 	<TexPath>res/Sprs/object/object_mianyi01</TexPath>
 	<MaxStack>1</MaxStack>
 	<Desc>炼丹师专用服装(上身)，上面具有提高成功率的符阵加持效果。</Desc>

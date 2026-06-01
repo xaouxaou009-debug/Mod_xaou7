@@ -97,9 +97,9 @@
 	</ThingDef>
 	
 	<ThingDef Type="Item" Name="Item_LingOriginalJin" Parent="RockBlockBase">
-	<TexPath>Spr\ChaoJin.png</TexPath>
-	<ThingName>超灵源·金</ThingName>	
-	<Desc>沟通天地间金属性灵源的通道，向四周散发着强烈的金属性气息，附带超强聚灵效果</Desc>
+	<TexPath>Spr\Golden_Soul_Core.png</TexPath>
+	<ThingName>แก่นพลังวิญญาณขั้นสูง · ธาตุทอง</ThingName>	
+	<Desc>สื่อกลางที่เชื่อมโยงกับแหล่งพลังวิญญาณธาตุทองแห่งฟ้าดิน แผ่พลังธาตุทองอันเข้มข้นโดยรอบ และมอบผลการรวมปราณวิญญาณระดับสูงอย่างยิ่ง</Desc>
 	<Rate>12</Rate>
 	<Beauty>25</Beauty>
 	<ElementKind>Jin</ElementKind>
@@ -117,8 +117,8 @@
 		</BeMade> 
 	</Item>
 	<Ling>
-		<AddionLing>500</AddionLing>
-		<AddionRadius>5</AddionRadius>
+		<AddionLing>1000</AddionLing>
+		<AddionRadius>10</AddionRadius>
 		<AddionFailing>0.4</AddionFailing>
 		<AddionFailRadius>5</AddionFailRadius>
 		
