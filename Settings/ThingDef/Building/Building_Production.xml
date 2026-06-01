@@ -1,8 +1,8 @@
 ﻿<ThingDefs><List>
 <ThingDef Type="Building" Name="ChaoFanPlace"  Parent="ProductionBase">	
-	<ThingName>超凡法坛</ThingName>
-	<Desc>凝聚了超凡之力的法坛，能够制造出各种逆天级别的道具！</Desc>
-	<TexPath>Spr\BuildChaoFan.png</TexPath>
+	<ThingName>แท่นมังกรวารี</ThingName>
+	<Desc>แท่นพิธีที่หลอมรวมพลังเหนือโลกีย์เอาไว้ สามารถสร้างสรรค์วัตถุวิเศษระดับฝืนลิขิตฟ้าได้หลากหลายชนิด!</Desc>
+	<TexPath>Spr\Shopkeeper.png</TexPath>
 	<TexScale>1</TexScale>
 	<Tags>
 	</Tags>
