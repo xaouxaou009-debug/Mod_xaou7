@@ -328,7 +328,7 @@
 	</Light>
 	</ThingDef>
 	<ThingDef Type="Item" Name="Item_LingOriginalWu" Parent="RockBlockBase">
-	<TexPath>Spr\Ch_Th5.png</TexPath>
+	<TexPath>Spr\ChaoWu.png</TexPath>
 	<ThingName>แกนวิญญาณ : ไร้ธาตุ</ThingName>	
 	<Desc>สื่อกลางที่เชื่อมโยงกับแหล่งพลังวิญญาณไร้ธาตุแห่งฟ้าดิน แผ่พลังวิญญาณบริสุทธิ์อันเข้มข้นไปทั่วบริเวณ และมีผลรวมปราณวิญญาณระดับสูงอย่างยิ่ง</Desc>
 	<Rate>12</Rate>
