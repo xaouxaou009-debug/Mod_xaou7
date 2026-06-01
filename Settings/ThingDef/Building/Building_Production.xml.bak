@@ -1,7 +1,7 @@
 ﻿<ThingDefs><List>
 <ThingDef Type="Building" Name="ChaoFanPlace"  Parent="ProductionBase">	
 	<ThingName>ร้านขายของ</ThingName>
-	<Desc>แม่ค้าสุดสวย ที่แอบหลอมรวมพลังเหนือโลกีย์เอาไว้ สามารถสร้างสรรค์วัตถุวิเศษระดับฝืนลิขิตฟ้าได้หลากหลายชนิด!</Desc>
+	<Desc>แท่นพิธีที่หลอมรวมพลังเหนือโลกีย์เอาไว้ สามารถสร้างสรรค์วัตถุวิเศษระดับฝืนลิขิตฟ้าได้หลากหลายชนิด!</Desc>
 	<TexPath>Spr\asst_1.png</TexPath>
 	<TexScale>1</TexScale>
 	<Tags>
