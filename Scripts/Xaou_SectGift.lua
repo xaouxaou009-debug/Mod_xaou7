@@ -8,6 +8,12 @@ local BUTTON_EN = "Sect Gift"
 local EVENT_KEY = "XaouSectGift_SelectNpc"
 local FRIEND_POINT_PER_GIFT = 1
 local RELATION_PER_GIFT = 100
+local UI_PAGE_SIZE = 6
+
+local SectGiftView = nil
+local SectGiftRows = {}
+local SectGiftPage = 1
+local SectGiftSelected = 1
 
 local function show_message(text)
     local shown = false
@@ -182,6 +188,123 @@ local function sync_relation_from_friend_points(school_id)
     return relation
 end
 
+local function ui_child(view, name)
+    local value = nil
+    if view ~= nil then
+        pcall(function() value = view:GetChild(name) end)
+    end
+    return value
+end
+
+local function ui_set_text(object, value)
+    if object == nil then return end
+    pcall(function() object.text = tostring(value or "") end)
+    pcall(function() object.title = tostring(value or "") end)
+end
+
+local function ui_set_visible(object, value)
+    if object == nil then return end
+    pcall(function() object.visible = value == true end)
+    pcall(function() object.touchable = value == true end)
+end
+
+local function relation_rank_name(school_id)
+    local value = nil
+    pcall(function()
+        value = CS.XiaWorld.SchoolMgr.Instance:GetSchoolRelationRank(school_id)
+    end)
+    local key = tostring(value or "")
+    local names = {
+        ["None"] = "ไม่รู้จัก",
+        ["Hatred"] = "ศัตรู",
+        ["Hostility"] = "เป็นปฏิปักษ์",
+        ["Cold"] = "เย็นชา",
+        ["Neutral"] = "เป็นกลาง",
+        ["Friendly"] = "เป็นมิตร",
+        ["Respect"] = "เคารพนับถือ"
+    }
+    return names[key] or (key ~= "" and key or "-")
+end
+
+local function close_custom_window()
+    if SectGiftView ~= nil then
+        pcall(function() SectGiftView:RemoveFromParent() end)
+        pcall(function() SectGiftView:Dispose() end)
+        SectGiftView = nil
+    end
+end
+
+local function refresh_custom_window(rebuild)
+    local view = SectGiftView
+    if view == nil then return false end
+
+    if rebuild == true then
+        local rows, build_error = build_school_rows()
+        if #rows == 0 then
+            show_message(build_error or "ไม่พบสำนักที่สามารถมอบของขวัญได้")
+            return false
+        end
+        SectGiftRows = rows
+        local max_page = math.max(1, math.ceil(#rows / UI_PAGE_SIZE))
+        if SectGiftPage > max_page then SectGiftPage = max_page end
+        if SectGiftSelected > #rows then SectGiftSelected = 1 end
+    end
+
+    local max_page = math.max(1, math.ceil(#SectGiftRows / UI_PAGE_SIZE))
+    local first = (SectGiftPage - 1) * UI_PAGE_SIZE + 1
+    for slot = 1, UI_PAGE_SIZE do
+        local button = ui_child(view, "schoolBtn" .. tostring(slot))
+        local row_index = first + slot - 1
+        local row = SectGiftRows[row_index]
+        ui_set_visible(button, row ~= nil)
+        if row ~= nil then
+            local prefix = row_index == SectGiftSelected and "▶ " or ""
+            ui_set_text(
+                button,
+                prefix .. row.name
+                .. "  |  ความสัมพันธ์ " .. string.format("%.0f", get_school_relation(row.id))
+            )
+        end
+    end
+
+    local selected = SectGiftRows[SectGiftSelected]
+    if selected == nil then
+        SectGiftSelected = first
+        selected = SectGiftRows[SectGiftSelected]
+    end
+
+    ui_set_text(ui_child(view, "title"), "มอบของขวัญสำนัก")
+    ui_set_text(
+        ui_child(view, "subtitle"),
+        "เลือกสำนัก แล้วมอบสิ่งของเพื่อเพิ่มแต้มบุญคุณและความสัมพันธ์"
+    )
+    ui_set_text(ui_child(view, "txtPage"), tostring(SectGiftPage) .. "/" .. tostring(max_page))
+    ui_set_text(ui_child(view, "btnPrev"), "◀ ก่อนหน้า")
+    ui_set_text(ui_child(view, "btnNext"), "ถัดไป ▶")
+    ui_set_text(ui_child(view, "btnClose"), "×")
+    ui_set_text(ui_child(view, "btnGift"), "มอบของขวัญ")
+    ui_set_text(ui_child(view, "btnRefresh"), "รีเฟรชข้อมูล")
+    ui_set_text(ui_child(view, "statusText"), "Xaou009 • ระบบมอบของขวัญสำนัก")
+
+    if selected ~= nil then
+        ui_set_text(ui_child(view, "schoolName"), selected.name)
+        ui_set_text(ui_child(view, "leaderText"), "เจ้าสำนัก: " .. selected.leader)
+        ui_set_text(
+            ui_child(view, "relationValue"),
+            string.format("%.0f", get_school_relation(selected.id))
+        )
+        ui_set_text(ui_child(view, "rankValue"), relation_rank_name(selected.id))
+        ui_set_text(ui_child(view, "pointValue"), tostring(get_friend_point(selected.id)))
+    else
+        ui_set_text(ui_child(view, "schoolName"), "เลือกสำนัก")
+        ui_set_text(ui_child(view, "leaderText"), "เจ้าสำนัก: -")
+        ui_set_text(ui_child(view, "relationValue"), "0")
+        ui_set_text(ui_child(view, "rankValue"), "-")
+        ui_set_text(ui_child(view, "pointValue"), "0")
+    end
+    return true
+end
+
 local function open_native_gift(row)
     if row == nil then return false end
 
@@ -220,6 +343,128 @@ local function open_native_gift(row)
         )
         return false
     end
+    return true
+end
+
+local function open_custom_window()
+    close_custom_window()
+
+    local rows, build_error = build_school_rows()
+    if #rows == 0 then
+        return false, build_error or "ไม่พบสำนักที่สามารถมอบของขวัญได้"
+    end
+
+    local package = UIPackage or (CS.FairyGUI and CS.FairyGUI.UIPackage)
+    local root = (GRoot and GRoot.inst) or (CS.FairyGUI and CS.FairyGUI.GRoot.inst)
+    if package == nil or root == nil then
+        return false, "FairyGUI/GRoot not found"
+    end
+
+    local add_ok, add_result = pcall(function()
+        return package.AddPackage("UI/XaouSectGiftUI")
+    end)
+    if not add_ok then
+        return false, "AddPackage: " .. tostring(add_result)
+    end
+
+    local view = nil
+    local errors = {}
+    local function try_create(label, creator)
+        if view ~= nil then return end
+        local ok, value = pcall(creator)
+        if ok and value ~= nil then
+            view = value
+        else
+            errors[#errors + 1] = label .. ": " .. tostring(value)
+        end
+    end
+
+    try_create("CreateObject", function()
+        return package.CreateObject("XaouSectGiftUI", "XaouSectGiftWindow")
+    end)
+    try_create("CreateObject.xml", function()
+        return package.CreateObject("XaouSectGiftUI", "XaouSectGiftWindow.xml")
+    end)
+    try_create("CreateObjectFromURL", function()
+        return package.CreateObjectFromURL("ui://xsg01ui0xsgw1")
+    end)
+    try_create("GetItemURL", function()
+        local url = package.GetItemURL("XaouSectGiftUI", "XaouSectGiftWindow")
+        if url == nil or tostring(url) == "" then return nil end
+        return package.CreateObjectFromURL(url)
+    end)
+
+    if view == nil then
+        return false, table.concat(errors, "\n")
+    end
+
+    SectGiftRows = rows
+    SectGiftPage = 1
+    SectGiftSelected = 1
+    SectGiftView = view
+    root:AddChild(view)
+    view.x = (root.width - view.width) / 2
+    view.y = (root.height - view.height) / 2
+
+    local close = ui_child(view, "btnClose")
+    if close ~= nil then close.onClick:Add(close_custom_window) end
+
+    for slot = 1, UI_PAGE_SIZE do
+        local button = ui_child(view, "schoolBtn" .. tostring(slot))
+        local fixed_slot = slot
+        if button ~= nil then
+            button.onClick:Add(function()
+                local row_index = (SectGiftPage - 1) * UI_PAGE_SIZE + fixed_slot
+                if SectGiftRows[row_index] ~= nil then
+                    SectGiftSelected = row_index
+                    refresh_custom_window(false)
+                end
+            end)
+        end
+    end
+
+    local previous = ui_child(view, "btnPrev")
+    if previous ~= nil then
+        previous.onClick:Add(function()
+            if SectGiftPage > 1 then
+                SectGiftPage = SectGiftPage - 1
+                SectGiftSelected = (SectGiftPage - 1) * UI_PAGE_SIZE + 1
+                refresh_custom_window(false)
+            end
+        end)
+    end
+
+    local next_button = ui_child(view, "btnNext")
+    if next_button ~= nil then
+        next_button.onClick:Add(function()
+            local max_page = math.max(1, math.ceil(#SectGiftRows / UI_PAGE_SIZE))
+            if SectGiftPage < max_page then
+                SectGiftPage = SectGiftPage + 1
+                SectGiftSelected = (SectGiftPage - 1) * UI_PAGE_SIZE + 1
+                refresh_custom_window(false)
+            end
+        end)
+    end
+
+    local refresh_button = ui_child(view, "btnRefresh")
+    if refresh_button ~= nil then
+        refresh_button.onClick:Add(function() refresh_custom_window(true) end)
+    end
+
+    local gift_button = ui_child(view, "btnGift")
+    if gift_button ~= nil then
+        gift_button.onClick:Add(function()
+            local selected = SectGiftRows[SectGiftSelected]
+            if selected == nil then
+                show_message("กรุณาเลือกสำนักก่อน")
+                return
+            end
+            close_custom_window()
+            open_native_gift(selected)
+        end)
+    end
+
+    refresh_custom_window(false)
     return true
 end
 
@@ -284,9 +529,17 @@ function XaouSectGift:OnStep(dt)
 end
 
 function XaouSectGift:Open()
+    local custom_ok, custom_error = open_custom_window()
+    if custom_ok then return true end
+
+    show_message(
+        "เปิดหน้าต่าง FGUI ใหม่ไม่สำเร็จ\n"
+        .. tostring(custom_error or "ไม่ทราบสาเหตุ")
+    )
+
     local rows, build_error = build_school_rows()
     if #rows == 0 then
-        show_message(build_error or "ไม่พบสำนักที่สามารถมอบของขวัญได้")
+        show_message(build_error or custom_error or "ไม่พบสำนักที่สามารถมอบของขวัญได้")
         return false
     end
 
@@ -351,6 +604,7 @@ function XaouSectGift:OnEnter()
 end
 
 function XaouSectGift:OnLeave()
+    close_custom_window()
     local events = GameMain:GetMod("_Event", true)
     local select_npc = nil
     pcall(function() select_npc = g_emEvent.SelectNpc end)
