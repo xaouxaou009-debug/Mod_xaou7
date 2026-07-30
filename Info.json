@@ -1,1 +1,13 @@
-{"Name":"MultiItem","DisplayName":"无限资源","GameVersion":1.268,"Version":1.6,"Desc":"[作者]\r\n    我住你家楼上\r\n[简介]\r\n茫茫修仙路，修的便是资源，既要修仙，资源自然是必不可少的\n\n带上这个mod，做修仙界最有资源的人，一生二，二生四，圣品满灵，诸天万物\n\n1.给物品添加了一个[color=#FF0000]幽淬按钮[/color]，点一下相当于幽淬一次，必然成功\n\n2.给物品添加了一个[color=#FF0000]灵淬按钮[/color]，点一下相当于灵淬一次，必然成功\n\n3.给物品添加了一个[color=#FF0000]翻倍按钮[/color]，点一下可以让当前物品的堆叠数量翻倍，最高3000，若是超出物品堆叠上限，则在存档的时候会被自动修正为上限值，不会坏挡，[color=#FF0000]读档后若数据被修正成了堆叠上限，需要重新翻倍，敬请注意！[/color]注意：目前功法，符箓，法宝暂不支持翻倍，若有该类物品翻倍后无法使用的问题，请立即存档后读档即可解决\n\n4.给法宝添加了一个[color=#FF0000]天劫按钮[/color]，点一下即可让法宝获得三十六重天劫洗练\n\n5.添加0级丹药[color=#FF0000]大道至简丹[/color]，还在为参悟不够而发愁吗？吃下这颗丹药，大道，如此简单！\n\n6.添加0级丹药[color=#FF0000]尘心浩劫丹[/color]，还在为分神不够寄托而发愁哦吗？吃下这颗丹药，八境纯阳，如此简单！\n\n7.添加0级丹药，[color=#FF0000]极御炼神丹[/color]，还在为法宝位不够而发愁吗？吃下这颗丹药，人人都是七杀暴君！\n\n8.添加工作类建筑[color=#FF0000]超凡法坛[/color]，产出超酷炫超强聚灵物————六属性超灵源，聚灵不够？不存在的！\n\n9.所有[color=#FF0000]秘宝的激活条件归零[/color]，锻造出来即可激活使用，再也不用为了苛刻的激活条件苦苦煎熬了！","Author":"烟花射手座","UIPackage":null,"ID":"3628817866","Flag":796696524,"Tags":["Gong","Esoterica","Elixir","Item","Building","Function","Usability","ExcludeRealmsHeaven"],"IncreasedDesc":"v1.5：所有秘宝的激活条件归零","IsInsideCreat":false,"Previews":[],"ParentModInfo":null}
+{
+  "Name": "Xaou_SectGift",
+  "DisplayName": "Xaou 009 มอบของขวัญสำนัก",
+  "GameVersion": 1.268,
+  "Version": 1.2,
+  "Desc": "เลือกสำนักบนแผนที่โลก แล้วเปิดระบบมอบของขวัญเดิมของเกม",
+  "Author": "Xaou009",
+  "ID": "970300013",
+  "Tags": ["School", "Gift", "Relation", "Mobile", "XLua"],
+  "IncreasedDesc": "เพิ่มปุ่มมอบของขวัญสำนักบน NPC ใช้หน้าส่งของขวัญและระบบความสัมพันธ์เดิมของเกม",
+  "IsInsideCreat": true,
+  "Previews": []
+}
